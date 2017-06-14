@@ -1,4 +1,5 @@
-﻿using Aula2505.Models;
+﻿using Aula2505.Controllers;
+using Aula2505.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,15 +28,18 @@ namespace Aula2505.Views.Categorias
             Session["Descricao"] = txtDescricao.Text;
             Session["Ativo"] = ckbAtivo.Checked;
 
-            BaseDadosContainer contexto = new BaseDadosContainer();
+            //BaseDadosContainer contexto = new BaseDadosContainer();
+            CategoriasController categoria = new CategoriasController();
 
-            Categoria categoria = new Categoria();
+            Categoria categorias = new Categoria();
+            
 
-            categoria.Nome = Session["Nome"].ToString();
-            categoria.Descricao = Session["Descricao"].ToString();
-            categoria.Ativo = Convert.ToBoolean(Session["Ativo"].ToString());
-            contexto.Categorias.Add(categoria);
-            contexto.SaveChanges();
+            categorias.Nome = Session["Nome"].ToString();
+            categorias.Descricao = Session["Descricao"].ToString();
+            categorias.Ativo = Convert.ToBoolean(Session["Ativo"].ToString());
+
+            categoria.AdicionarCategoria(categorias);
+            //contexto.SaveChanges();
         }
     }
 }

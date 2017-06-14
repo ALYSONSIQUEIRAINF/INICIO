@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3385FE89-8E89-4ACA-AFEA-EBF86E6A7790}</ProjectGuid>
+    <ProjectGuid>{09DE6942-B34E-4D3F-B099-19A5ADBBC3C4}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aula2505</RootNamespace>
-    <AssemblyName>Aula2505</AssemblyName>
+    <RootNamespace>Aula0106</RootNamespace>
+    <AssemblyName>Aula0106</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -157,24 +157,24 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\BaseDados.edmx">
+    <EntityDeploy Include="Models\Mecanica.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BaseDados.Designer.cs</LastGenOutput>
+      <LastGenOutput>Mecanica.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BaseDados.Context.tt">
+    <Content Include="Models\Mecanica.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDados.Context.cs</LastGenOutput>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+      <LastGenOutput>Mecanica.Context.cs</LastGenOutput>
+      <DependentUpon>Mecanica.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\BaseDados.edmx.diagram">
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+    <Content Include="Models\Mecanica.edmx.diagram">
+      <DependentUpon>Mecanica.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Models\BaseDados.edmx.sql" />
-    <Content Include="Models\BaseDados.tt">
+    <Content Include="Models\Mecanica.edmx.sql" />
+    <Content Include="Models\Mecanica.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDados.cs</LastGenOutput>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+      <LastGenOutput>Mecanica.cs</LastGenOutput>
+      <DependentUpon>Mecanica.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -210,8 +210,10 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Views\Categorias\Lista.aspx" />
-    <Content Include="Views\Produtos\Lista.aspx" />
+    <Content Include="Views\Carro\PaginaCarro.aspx" />
+    <Content Include="Views\Cliente\EditaCliente.aspx" />
+    <Content Include="Views\Cliente\PaginaCliente.aspx" />
+    <Content Include="Views\Lista\Lista.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -242,7 +244,8 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,26 +256,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.Context.cs">
+    <Compile Include="Models\Carro.cs">
+      <DependentUpon>Mecanica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs">
+      <DependentUpon>Mecanica.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mecanica.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.Context.tt</DependentUpon>
+      <DependentUpon>Mecanica.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.cs">
+    <Compile Include="Models\Mecanica.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>Mecanica.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.Designer.cs">
+    <Compile Include="Models\Mecanica.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Categoria.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Produto.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>Mecanica.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -296,18 +299,32 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Categorias\Lista.aspx.cs">
+    <Compile Include="Views\Carro\PaginaCarro.aspx.cs">
+      <DependentUpon>PaginaCarro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Carro\PaginaCarro.aspx.designer.cs">
+      <DependentUpon>PaginaCarro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cliente\EditaCliente.aspx.cs">
+      <DependentUpon>EditaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Cliente\EditaCliente.aspx.designer.cs">
+      <DependentUpon>EditaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cliente\PaginaCliente.aspx.cs">
+      <DependentUpon>PaginaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Cliente\PaginaCliente.aspx.designer.cs">
+      <DependentUpon>PaginaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Lista\Lista.aspx.cs">
       <DependentUpon>Lista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Categorias\Lista.aspx.designer.cs">
-      <DependentUpon>Lista.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Produtos\Lista.aspx.cs">
-      <DependentUpon>Lista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Produtos\Lista.aspx.designer.cs">
+    <Compile Include="Views\Lista\Lista.aspx.designer.cs">
       <DependentUpon>Lista.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -327,9 +344,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49925</DevelopmentServerPort>
+          <DevelopmentServerPort>49424</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49925/</IISUrl>
+          <IISUrl>http://localhost:49424/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

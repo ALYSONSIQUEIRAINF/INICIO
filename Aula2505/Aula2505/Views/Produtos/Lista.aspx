@@ -17,10 +17,13 @@
             <asp:CheckBox ID="ckbAtivo" runat="server" /></div>
     </div>
     <div class="row">
-        <div class="col-md-12"><asp:DropDownList ID="ddlCategoria" runat="server" DataTextField="Nome" DataValueField="Id" ></asp:DropDownList></div>
+        <div class="col-md-12">
+            <asp:DropDownList ID="ddlCategoria" runat="server" DataTextField="Nome" DataValueField="Id" ></asp:DropDownList>
+
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-md-12"><asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click"></asp:Button> </div>
+        <div class="col-md-12"><asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click"/> </div>
     </div>
 </asp:Content>
