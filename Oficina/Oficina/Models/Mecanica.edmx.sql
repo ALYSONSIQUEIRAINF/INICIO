@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/13/2017 22:11:16
--- Generated from EDMX file: C:\Users\ALYSON\Source\Repos\INICIO\Aula0106\Aula0106\Models\Mecanica.edmx
+-- Date Created: 06/14/2017 21:36:51
+-- Generated from EDMX file: C:\Users\ALYSON\Source\Repos\INICIO\Oficina\Oficina\Models\Mecanica.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [ModuloControleEstoque.DAL.Context];
+USE [OficinaDB];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,20 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_ClienteCarro]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Carros] DROP CONSTRAINT [FK_ClienteCarro];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[Clientes]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Clientes];
-GO
-IF OBJECT_ID(N'[dbo].[Carros]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Carros];
-GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -39,7 +30,7 @@ GO
 -- Creating table 'Clientes'
 CREATE TABLE [dbo].[Clientes] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Nome] nvarchar(max)  NULL,
+    [Nome] nvarchar(max)  NOT NULL,
     [SobreNome] nvarchar(max)  NOT NULL,
     [CPF] nvarchar(max)  NOT NULL
 );
@@ -49,8 +40,8 @@ GO
 CREATE TABLE [dbo].[Carros] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Marca] nvarchar(max)  NOT NULL,
-    [Descricao] nvarchar(max)  NULL,
     [Placa] nvarchar(max)  NOT NULL,
+    [Descricao] nvarchar(max)  NOT NULL,
     [Defeito] nvarchar(max)  NOT NULL,
     [ClienteId] int  NOT NULL
 );

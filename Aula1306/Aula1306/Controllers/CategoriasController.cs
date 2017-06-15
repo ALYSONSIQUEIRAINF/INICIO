@@ -19,14 +19,28 @@ namespace Aula1306.Controllers
 
             //ViewBag.ListaCategorias = categorias;
 
-            List<Categoria> categorias = new List<Categoria>();
-            categorias.Add(new Categoria() { Nome = "Carros"});
-            categorias.Add(new Categoria() { Nome = "Motos" });
-            categorias.Add(new Categoria() { Nome = "Barcos" });
-            categorias.Add(new Categoria() { Nome = "Caminhoes" });
-            categorias.Add(new Categoria() { Nome = "Avioes" });
+            //List<Categoria> categorias = new List<Categoria>();
+            //categorias.Add(new Categoria() { Nome = "Carros" });
+            //categorias.Add(new Categoria() { Nome = "Motos" });
+            //categorias.Add(new Categoria() { Nome = "Barcos" });
+            //categorias.Add(new Categoria() { Nome = "Caminhoes" });
+            //categorias.Add(new Categoria() { Nome = "Avioes" });
 
-            return View(categorias);
+            //return View(categorias);
+            return View();
+
+
+        }
+        //GET
+        public ActionResult Create()
+        {
+            return View();
+
+        }
+        [HttpPost]
+        public ActionResult Create(Categoria categoria)
+        {
+            return View(categoria);
         }
     }
 }
