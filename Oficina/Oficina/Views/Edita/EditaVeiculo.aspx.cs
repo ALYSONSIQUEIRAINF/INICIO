@@ -21,6 +21,8 @@ namespace Oficina.Views.Edita
 
                 ddlCliente.DataBind();
 
+                ddlCliente.SelectedValue = Convert.ToString(Session["Id"]);
+
                 txtDefeitoVeiculo.Text = Convert.ToString(Session["Defeito"]);
                 txtDescricao.Text = Convert.ToString(Session["Descricao"]);
                 txtMarcaVeiculo.Text = Convert.ToString(Session["Marca"]);
